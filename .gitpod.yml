@@ -1,5 +1,7 @@
 tasks:
-  - init: pip install -r ./requirements.txt
-    command: python3 google-serach-lambdatest.py
-  
-  
+  - command: python3 -m http.server 8080
+    name: Static Server
+  - openMode: split-right
+    command: echo SplitTerminal
+  - openIn: left
+    command: echo LeftPanelTerminal
