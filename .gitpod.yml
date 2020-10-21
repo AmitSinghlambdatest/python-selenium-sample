@@ -3,5 +3,5 @@ tasks:
     name: Static Server
   - openMode: split-right
     command: echo SplitTerminal
-  - openIn: left
+  - openMode: tab-after
     command: echo LeftPanelTerminal
