@@ -45,18 +45,17 @@ class LTAutomate(unittest.TestCase):
            lambda_tunnel=True 
 
         desired_cap = {
-            'platform' : os.getenv('LT_PLATFORM') , 
-            'browserName' : os.getenv('LT_BROWSER_NAME') ,
-            'version' :  os.getenv('LT_BROWSER_VERSION') ,
+            'platform' : "win10", 
+            'browserName' : "chrome",
+            'version' :  "67.0",
             # Resolution of machine
-            "resolution": os.getenv('LT_RESOLUTION') ,
-            "name": "LambdaTest Python google search test "+ os.getenv('LT_BUILD_NUMBER'),
-            "build": os.getenv('LT_BUILD_NAME') ,
+            "resolution": "1024x768", 
+            "name": "LambdaTest python google search test ",
+            "build": "Slack build check1",
             "network": True,
             "video": True,
             "visual": True,
             "console": True,
-            "tunnel":lambda_tunnel,
         }
 
         # URL: https://{username}:{accessToken}@beta-hub.lambdatest.com/wd/hub
