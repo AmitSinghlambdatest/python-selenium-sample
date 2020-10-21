@@ -1,7 +1,5 @@
 tasks:
-  - command: python3 -m http.server 8080
-    name: Static Server
-  - openMode: split-right
-    command: echo SplitTerminal
+  - init: pip install -r ./requirements.txt
+    command : python3 google-serach-lambdatest.py
   - openMode: tab-after
-    command: echo LeftPanelTerminal
+    command: echo -e To see test results goto '\033[4mhttps://automation.lambdatest.com/\033[0m'
