@@ -5,7 +5,6 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
 
-
 class LTAutomate(unittest.TestCase):
     """
     LambdaTest selenium automation sample example
@@ -13,7 +12,6 @@ class LTAutomate(unittest.TestCase):
     ----------
     username: Username can be found at automation dashboard
     accessToken:  AccessToken can be genarated from automation dashboard or profile section
-
     Result
     -------
     Execute Test on lambdatest Distributed Grid perform selenium automation based 
@@ -28,22 +26,19 @@ class LTAutomate(unittest.TestCase):
         platfrom : Supported platfrom - (Windows 10, Windows 8.1, Windows 8, Windows 7,  macOS High Sierra, macOS Sierra, OS X El Capitan, OS X Yosemite, OS X Mavericks)
         browserName : Supported platfrom - (chrome, firefox, Internet Explorer, MicrosoftEdge)
         version :  Supported list of version can be found at https://www.lambdatest.com/capabilities-generator/
-
         Result
         -------
         """
         # username: Username can be found at automation dashboard
-        username=os.getenv('LT_USERNAME') 
+        username= os.getenv('LT_USERNAME') 
 
         # accessToken:  AccessToken can be genarated from automation dashboard or profile section
-        accessToken=os.getenv('LT_ACCESS_KEY') 
+        accessToken= os.getenv('LT_ACCESS_KEY') 
         # gridUrl: gridUrl can be found at automation dashboard
         gridUrl = "hub.lambdatest.com/wd/hub"
         # get tunnel name
         lambda_tunnel= False
-        if os.getenv('LT_TUNNEL_NAME') is not None: 
-           lambda_tunnel=True 
-
+        
         desired_cap = {
             'platform' : "win10", 
             'browserName' : "chrome",
@@ -59,7 +54,7 @@ class LTAutomate(unittest.TestCase):
         }
 
         # URL: https://{username}:{accessToken}@beta-hub.lambdatest.com/wd/hub
-        url =  gridUrl 
+        url =  "https://"+username+":"+accessToken+"@"+gridUrl 
         
         print("Initiating remote driver on platfrom: "+desired_cap["platform"]+" browser: "+desired_cap["browserName"]+" version: "+desired_cap["version"])
         print(url)
@@ -91,7 +86,7 @@ class LTAutomate(unittest.TestCase):
         elem.submit()
 
         print("Printing title of current page :"+driver.title)
-        driver.execute_script("lambda-status=passed")
+        driver.execute_script("lambda-status=failed")
         print("Requesting to mark test : pass")
 
     
