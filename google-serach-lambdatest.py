@@ -30,14 +30,14 @@ class LTAutomate(unittest.TestCase):
         -------
         """
         # username: Username can be found at automation dashboard
-        username= os.getenv('LT_USERNAME') 
+        username= "divyanks"
 
         # accessToken:  AccessToken can be genarated from automation dashboard or profile section
-        accessToken= os.getenv('LT_ACCESS_KEY') 
+        accessToken= "XFSP1IqZMWTXUC1iwbVqFCClLX654vuFg8OZUMyCfwbfygavq1" 
         # gridUrl: gridUrl can be found at automation dashboard
         gridUrl = "hub.lambdatest.com/wd/hub"
         # get tunnel name
-        lambda_tunnel= False
+ 
         
         desired_cap = {
             'platform' : "win10", 
@@ -45,12 +45,12 @@ class LTAutomate(unittest.TestCase):
             'version' :  "67.0",
             # Resolution of machine
             "resolution": "1024x768", 
-            "name": "LambdaTest python google search test ",
-            "build": "Slack build check1",
+            "name": "Azure pipeline extension google search test ",
+            "build": "Azure pipeline extension",
             "network": True,
             "video": True,
             "visual": True,
-            "console": True,
+            "console": True
         }
 
         # URL: https://{username}:{accessToken}@beta-hub.lambdatest.com/wd/hub
@@ -58,7 +58,6 @@ class LTAutomate(unittest.TestCase):
         
         print("Initiating remote driver on platfrom: "+desired_cap["platform"]+" browser: "+desired_cap["browserName"]+" version: "+desired_cap["version"])
         print(url)
-        print("lambdaTunnel :"+str(lambda_tunnel))
         self.driver = webdriver.Remote(
             desired_capabilities=desired_cap,
             command_executor= url
@@ -86,7 +85,7 @@ class LTAutomate(unittest.TestCase):
         elem.submit()
 
         print("Printing title of current page :"+driver.title)
-        driver.execute_script("lambda-status=failed")
+        driver.execute_script("lambda-status=passed")
         print("Requesting to mark test : pass")
 
     
