@@ -1,8 +1,5 @@
 tasks:
   - init: pip install -r ./requirements.txt
-    name : terminal
-  - command: 'echo LT_USERNAME : "$LT_USERNAME"'
-  - command: 'echo LT_ACCESS_KEY : "$LT_ACCESS_KEY"'
-  - command: python3 google-serach-lambdatest.py
-  - command: echo -e To see test results goto '\033[4mhttps://automation.lambdatest.com/\033[0m'
+    command: python3 google-serach-lambdatest.py
+  
   
