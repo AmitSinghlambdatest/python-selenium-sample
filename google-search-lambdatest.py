@@ -31,7 +31,8 @@ class LTAutomate(unittest.TestCase):
         """
         # username: Username can be found at automation dashboard
         username= os.getenv('LT_USERNAME')
-	print(username)
+        print(username)
+	
         # accessToken:  AccessToken can be genarated from automation dashboard or profile section
         accessToken= os.getenv('LT_ACCESS_KEY')
         print(accessToken)
