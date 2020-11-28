@@ -36,6 +36,8 @@ class LTAutomate(unittest.TestCase):
         # accessToken:  AccessToken can be genarated from automation dashboard or profile section
         accessToken= os.getenv('LT_ACCESS_KEY')
         print(accessToken)
+        url =  os.getenv('LT_GRID_URL')
+        print(url)
         # gridUrl: gridUrl can be found at automation dashboard
         gridUrl = "hub.lambdatest.com/wd/hub"
         # get tunnel name
@@ -56,8 +58,7 @@ class LTAutomate(unittest.TestCase):
         }
 
         # URL: https://{username}:{accessToken}@beta-hub.lambdatest.com/wd/hub
-        url =  os.getenv('LT_GRID_URL')
-        print(url)
+        
         print("Initiating remote driver on platfrom: "+desired_cap["platform"]+" browser: "+desired_cap["browserName"]+" version: "+desired_cap["version"])
         print(url)
         self.driver = webdriver.Remote(
