@@ -55,7 +55,7 @@ class LTAutomate(unittest.TestCase):
 
         # URL: https://{username}:{accessToken}@beta-hub.lambdatest.com/wd/hub
         url =  os.getenv('LT_GRID_URL')
-        
+        print(url)
         print("Initiating remote driver on platfrom: "+desired_cap["platform"]+" browser: "+desired_cap["browserName"]+" version: "+desired_cap["version"])
         print(url)
         self.driver = webdriver.Remote(
