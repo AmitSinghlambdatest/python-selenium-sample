@@ -46,7 +46,7 @@ class LTAutomate(unittest.TestCase):
         desired_cap = {
             'platform' : "win10", 
             'browserName' : "chrome",
-            'version' :  "67.0",
+            'version' :  "6.0",
             # Resolution of machine
             "resolution": "1024x768", 
             "name": "Azure pipeline extension google search test ",
