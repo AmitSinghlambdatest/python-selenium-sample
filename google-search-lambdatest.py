@@ -46,7 +46,7 @@ class LTAutomate(unittest.TestCase):
         desired_cap = {
             'platform' : "win10", 
             'browserName' : "chrome",
-            'version' :  "6.0",
+            'version' :  "68.0",
             # Resolution of machine
             "resolution": "1024x768", 
             "name": "Azure pipeline extension google search test ",
@@ -88,7 +88,7 @@ class LTAutomate(unittest.TestCase):
         elem.submit()
 
         print("Printing title of current page :"+driver.title)
-        driver.execute_script("lambda-status=passed")
+        driver.execute_script("lambda-status=failed")
         print("Requesting to mark test : pass")
 
     
