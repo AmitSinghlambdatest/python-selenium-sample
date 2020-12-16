@@ -63,7 +63,7 @@ class LTAutomate(unittest.TestCase):
         print(url)
         self.driver = webdriver.Remote(
             desired_capabilities=desired_cap,
-	    #desired_capabilities["fixedIP"]="IP Address"
+	    desired_capabilities["fixedIP"]="23.105.164.144"
             command_executor= url
         )
 
