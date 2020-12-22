@@ -61,7 +61,7 @@ class LTAutomate(unittest.TestCase):
         
         print("Initiating remote driver on platfrom: "+desired_cap["platform"]+" browser: "+desired_cap["browserName"]+" version: "+desired_cap["version"])
         print(url)
-	#desired_cap["fixedIP"]="23.105.164.144"
+	desired_cap["fixedIP"]="23.105.164.144"
 	
         self.driver = webdriver.Remote(
             desired_capabilities=desired_cap,
